@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cybersecurity Speaking Timeline</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: #0b0c10;
+    color: #c5c6c7;
+    margin: 0;
+    padding: 0;
+  }
+  .timeline {
+    position: relative;
+    margin: 50px auto;
+    padding: 40px 0;
+    width: 90%;
+    max-width: 900px;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 2px;
+    background: #45a29e;
+    transform: translateX(-50%);
+  }
+  .event {
+    position: relative;
+    width: 50%;
+    padding: 15px 30px;
+    box-sizing: border-box;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease forwards;
+  }
+  .event.left {
+    left: 0;
+    animation-delay: 0.3s;
+  }
+  .event.right {
+    left: 50%;
+    animation-delay: 0.6s;
+  }
+  .event .content {
+    background: #1f2833;
+    padding: 15px;
+    border-radius: 6px;
+    box-shadow: 0 0 15px #00ffee88;
+    transition: box-shadow 0.3s ease;
+  }
+  .event .content:hover {
+    box-shadow: 0 0 25px #00ffeecc;
+  }
+  .event img {
+    width: 100%;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  .event h3 {
+    color: #66fcf1;
+    margin-top: 0;
+    margin-bottom: 8px;
+  }
+  .event p {
+    line-height: 1.4;
+  }
+  .event a {
+    color: #45a29e;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  .event a:hover {
+    text-decoration: underline;
+  }
+
+  @keyframes fadeInUp {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    .event, .event.left, .event.right {
+      width: 100%;
+      left: 0 !important;
+      padding-left: 70px;
+      padding-right: 25px;
+    }
+    .timeline::before {
+      left: 20px;
+    }
+    .event .content {
+      box-shadow: none;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="timeline">
+    <div class="event left">
+      <div class="content">
+        <img src="images/blackhat.jpg" alt="Black Hat USA 2025" />
+        <h3>Black Hat USA 2025</h3>
+        <p>August 2025 — Talk on AI Red Team automation focusing on agentic defense systems.</p>
+        <a href="https://blackhat.com" target="_blank" rel="noopener noreferrer">Event Link &#8594;</a>
+      </div>
+    </div>
+    <div class="event right">
+      <div class="content">
+        <img src="images/defcon.jpg" alt="DEF CON Workshop 2024" />
+        <h3>DEF CON Workshop 2024</h3>
+        <p>Led a 2-hour workshop on automotive protocol fuzzing and CAN bus vulnerabilities.</p>
+      </div>
+    </div>
+    <!-- Add more events below in the same structure -->
+  </div>
+</body>
+</html>
