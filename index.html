@@ -3,7 +3,8 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Cybersecurity Speaking Timeline</title>
+<title>Speak Logs</title>
+
 <style>
   body {
     font-family: Arial, sans-serif;
@@ -12,6 +13,7 @@
     margin: 0;
     padding: 0;
   }
+
   .timeline {
     position: relative;
     margin: 50px auto;
@@ -19,6 +21,7 @@
     width: 90%;
     max-width: 900px;
   }
+
   .timeline::before {
     content: '';
     position: absolute;
@@ -29,6 +32,7 @@
     background: #45a29e;
     transform: translateX(-50%);
   }
+
   .event {
     position: relative;
     width: 50%;
@@ -37,59 +41,68 @@
     opacity: 0;
     animation: fadeInUp 1.2s ease forwards;
   }
-  .event.left {
+
+  .left {
     left: 0;
     animation-delay: 0.3s;
   }
-  .event.right {
+
+  .right {
     left: 50%;
     animation-delay: 0.6s;
   }
-  .event .content {
+
+  .content {
     background: #1f2833;
     padding: 15px;
     border-radius: 6px;
     box-shadow: 0 0 15px #00ffee88;
     transition: box-shadow 0.3s ease;
   }
-  .event .content:hover {
+
+  .content:hover {
     box-shadow: 0 0 25px #00ffeecc;
   }
+
   .event img {
     width: 100%;
     border-radius: 5px;
     margin-bottom: 10px;
+    cursor: pointer;
+    transition: transform 0.3s;
   }
+
+  .event img:hover {
+    transform: scale(1.02);
+  }
+
   .event h3 {
     color: #66fcf1;
     margin-top: 0;
     margin-bottom: 8px;
   }
+
   .event p {
     line-height: 1.4;
   }
+
   .event a {
     color: #45a29e;
     text-decoration: none;
     font-weight: bold;
   }
+
   .event a:hover {
     text-decoration: underline;
   }
 
   @keyframes fadeInUp {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0);
-    }
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
   }
 
   @media screen and (max-width: 700px) {
-    .event, .event.left, .event.right {
+    .event {
       width: 100%;
       left: 0 !important;
       padding-left: 70px;
@@ -98,30 +111,592 @@
     .timeline::before {
       left: 20px;
     }
-    .event .content {
+    .content {
       box-shadow: none;
     }
   }
+
+  /* ----- Modal Image Feature ----- */
+  .img-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0,0,0,0.9);
+    animation: fadeIn 0.3s ease;
+  }
+
+  .modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    border-radius: 8px;
+    animation: zoomIn 0.4s ease;
+  }
+
+  @keyframes zoomIn {
+    from {transform: scale(0.8); opacity: 0;}
+    to {transform: scale(1); opacity: 1;}
+  }
+
+  @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
+
+  #caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 800px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 20px;
+  }
+  ul li::before {
+    content: "• ";
+    color: #66fcf1;
+    font-weight: bold;
+  }
+
 </style>
 </head>
 <body>
+
+  <header style="text-align:center; padding: 30px 20px; color:#66fcf1; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
+  <h1>Speaking Engagements & Workshops</h1>
+  <p style="color:#a0b0b5; font-size: 1.1em; max-width: 700px; margin: 0 auto;">
+    A record of presentations, workshops, and media contributions in cybersecurity, innovation, and IT.
+  </p>
+</header>
+
   <div class="timeline">
-    <div class="event left">
+
+
+    <div class="event">
       <div class="content">
-        <img src="images/blackhat.jpg" alt="Black Hat USA 2025" />
-        <h3>Black Hat USA 2025</h3>
-        <p>August 2025 — Talk on AI Red Team automation focusing on agentic defense systems.</p>
-        <a href="https://blackhat.com" target="_blank" rel="noopener noreferrer">Event Link &#8594;</a>
+        <img src="images/sas.png" alt="Kaspersky Security Analyst Summit 2025" class="zoomable" />
+        <h3>Kaspersky SAS25 - Drive-by Compromise: Botnet at 133.7km/h</h3>
+        <p>Kaspersky Security Analyst Summit 2025, Khao Lak, Thailand</p>
+        <a href="https://www.kaspersky.com/about/press-releases/kaspersky-reveals-sas-2025-will-focus-on-automotive-and-global-cyber-threats">Kaspersky Press </a> | 
+        <a href="https://live.eventtia.com/en/security-analyst-summit-2025" target="_blank" rel="noopener noreferrer">Kaspersky SAS →</a> 
       </div>
     </div>
-    <div class="event right">
+
+    <div class="event">
       <div class="content">
-        <img src="images/defcon.jpg" alt="DEF CON Workshop 2024" />
-        <h3>DEF CON Workshop 2024</h3>
-        <p>Led a 2-hour workshop on automotive protocol fuzzing and CAN bus vulnerabilities.</p>
+        <img src="images/UNDP.png" alt="UNDP / UNICC / FIRST Technical Colloquium 2025" class="zoomable" />
+        <h3>UNDP / UNICC / FIRST Technical Colloquium 2025: Strategic Threat Response to Cyber Attacks and Abuses</h3>
+        <p></p>
+        <a href="https://www.first.org/events/colloquia/undp-unicc2025/" target="_blank" rel="noopener noreferrer">FIRST →</a>
       </div>
     </div>
-    <!-- Add more events below in the same structure -->
+
+    <div class="event">
+      <div class="content">
+        <img src="images/sector.png" alt="SECTOR 2025 - DriveThru Hacking: Now with Delivery" class="zoomable" />
+        <h3>SECTOR 2025 - DriveThru Hacking: Now with Delivery</h3>
+        <p><b>Canada's Black Hat</b><br/>
+          In-car dash cameras (dashcams) are now standard in modern vehicles, often encouraged by insurers to support claims. But without strong security, they pose a serious privacy and attack risk.<br/><br/>
+          This talk introduces the latest iteration of DriveThru Hacking, targeting over two dozen dashcam models via an automated, vendor-agnostic tool that extracts footage, GPS data, and conversations in minutes. A new online service enables controlled testing via license-based red (attack) and blue (defense) modes. Blue deploys hardening and a lightweight IPS to block known threats.<br/><br/>
+          We will also explore SIM-enabled dashcams with 4G, where attackers escalate privileges from local access and establish outbound C2 beacons - turning mobile dashcams into roaming footholds. Unlike IoT devices locked to a home, these are exposed everywhere the vehicle goes.<br/><br/>
+          We will close with practical countermeasures for manufacturers, defenders, and regulators navigating an increasingly connected automotive world.
+      </p>
+        <a href="https://www.blackhat.com/sector/2025/briefings/schedule/index.html#drivethru-hacking-now-with-delivery-47398" target="_blank" rel="noopener noreferrer">Black Hat →</a> 
+      </div>
+    </div>
+
+
+    <div class="event">
+      <div class="content">
+        <img src="images/bh-drive.jpg" alt="Black Hat Asia 2025 Briefing - DriveThru Car Hacking: Fast Food, Faster Data Breach" class="zoomable" />
+        <h3>Black Hat Asia 2025 Briefing - DriveThru Car Hacking: Fast Food, Faster Data Breach</h3>
+        <p>
+          In-car dash cameras (dashcams) have become quintessential to our daily lives, supported by guidelines and regulations from insurance companies as part of insurance reduction or substantiating claims during an accident. However, this can be a double-edged sword without proper security measures, potentially compromising privacy and increasing susceptibility to identity theft.<br/><br/>
+          In this talk, we present our findings on hacking over two dozen leading dashcam models and provide a step-by-step approach to conducting an automated drive-through compromise on dashcams, resulting in major privacy breach within a few minutes. We will present a novel attack vector, DriveThru Hacking, and a tool that automates the process of Wi-Fi discovery, hacking, data exfiltration, LLM summarisation and insights generation, focusing on a vendor-agnostic attack and performance.<br/><br/>
+          A live test of the tool will be conducted, highlighting each point of failure and the reconnaissance data gathered from sample dashcam footage - in this demo, you will see how much information can be gleaned, from private conversations to daily routes, and the alarming speed at which compromise can unfold.<br/><br/>
+          Finally, we conclude with countermeasures to these attacks and precautionary practices we should adopt in the increasingly-connected world we live in today.
+      </p>
+        <a href="https://www.darkreading.com/vulnerabilities-threats/hackers-can-crack-car-cameras-minutes" target="_blank" rel="noopener noreferrer">Dark Reading</a> | 
+        <a href="https://www.youtube.com/watch?v=bkCLm4dnQfQ" target="_blank" rel="noopener noreferrer">Youtube</a> | 
+        <a href="https://blackhat.com/asia-25/briefings/schedule/#drivethru-car-hacking-fast-food-faster-data-breach-43514" target="_blank" rel="noopener noreferrer">Black Hat →</a> 
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/bh-bh.jpg" alt="Black Hat Asia 2025 Business Hall: DriveThru Hacking" class="zoomable" />
+        <h3>Black Hat Asia 2025 Business Hall: DriveThru Hacking</h3>
+      <p>A condensed version for business pass holders</p>
+        <a href="https://blackhat.com/asia-25/sponsored-sessions/schedule/index.html#drivethru-hacking-45214" target="_blank" rel="noopener noreferrer">Black Hat →</a> 
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/chair.png" alt="Chair, Detection Engineering & Threat Hunting SIG, FIRST" class="zoomable" />
+        <h3>Chair, Detection Engineering & Threat Hunting SIG, FIRST</h3>
+      <p>Founded a new Special Interest Group at FIRST to build a global community of Detection Engineers and Threat Hunters.</p>
+        <a href="https://www.first.org/global/sigs/de-th/" target="_blank" rel="noopener noreferrer">FIRST →</a> 
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/govware.png" alt="GovWare's Private In-Depth Roundtable" class="zoomable" />
+        <h3>GovWare's Private In-Depth Roundtable</h3>
+          <ul style="margin-top:10px; line-height:1.6; padding-left:20px;">
+            <li>2025 — SASE Cloud Platforms and AI Automation: Synergistic Approach to Better Security</li>
+            <li>2024 — Cloud Security: Building Resilience in an Evolving Landscape</li>
+            <li>2023 — Rethink Cybersecurity: Leap Confidently in the World of AI</li>
+          </ul>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/corinium.png" alt="Corinium’s AppSec & DevSecOps Singapore 2025" class="zoomable" />
+        <h3>Corinium’s AppSec & DevSecOps Singapore 2025 - Threat Response Strategies: Tackling Cyber Attacks vs. Abuses</h3>
+          <ul style="margin-top:10px; line-height:1.6; padding-left:20px;">
+            <li>Understanding adversaries’ objectives to reshape application security strategies</li>
+            <li>Moving beyond traditional symptom-based mitigation techniques</li>
+            <li>Crafting tailored responses to nullify threat actors’ methods</li>
+          </ul>
+
+        <a href="https://appsec-devsecops-sg.coriniumintelligence.com/speakers" target="_blank" rel="noopener noreferrer">Corinium →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/cybercrime.png" alt="Cybercrime Magazine Podcast 2025" class="zoomable" />
+        <h3>Cybercrime Magazine Podcast 2025 - Dashcam Security Risks</h3>
+        <p></p>
+        <a href="https://soundcloud.com/cybercrimemagazine/dashcam-security-risks-vulnerabilities-impact-on-drivers-george-chen-alina-tan-dyson" target="_blank" rel="noopener noreferrer">SoundCloud</a> | 
+        <a href="https://podcasts.apple.com/us/podcast/dashcam-security-risks-vulnerabilities-impact-on-drivers/id1428735886?i=1000706849597" target="_blank" rel="noopener noreferrer">Apple</a> | 
+        <a href="https://open.spotify.com/episode/5phOt42ldEdO2SZDS4nfHG" target="_blank" rel="noopener noreferrer">Spotify</a> | 
+        <a href="https://www.imdb.com/title/tt37007824/" target="_blank" rel="noopener noreferrer">IMDb →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/bh-dahn.png" alt="Black Hat Asia Arsenal 2024 - Deceptively Adaptive Honey Net (dahn)" class="zoomable" />
+        <h3>Black Hat Asia Arsenal 2024 - Deceptively Adaptive Honey Net (dahn)</h3>
+        Traditional honey nets offer static infrastructure and static responses. In DAHN, the infrastructure is abstracted, with lambda/gpt API (prompts stipulated) returning seemingly native responses to the threat actor, depending on the complexity index defined by the administrator. In other words, responses are dynamically crafted to entrap and retain threat actors, internal and external, in this environment for as long as possible, giving them a balance of false hope and realistic obstacles as they pass through our simulated layers of defense. Our AI-powered honey net mimics a given corporate environment to create a fictitious digital twin and embeds a controlled-level of simulated vulnerabilities/weaknesses to attract, distract, learn from, and attribute threat actors. The outputs are decoys, diversion, fingerprints, IoCs and IoAs, attributes, TTPs and behaviors, and used to augment threat detection and cyber defense strategies.
+        </p>
+        <a href="https://blackhat.com/asia-24/arsenal/schedule/#deceptively-adaptive-honey-net-dahn-37016" target="_blank" rel="noopener noreferrer">Black Hat →</a>
+      </div>
+    </div>
+
+
+
+    <div class="event">
+      <div class="content">
+        <img src="images/bh-div.png" alt="Black Hat Asia Arsenal 2024 - DefaceIntel-Visionary" class="zoomable" />
+        <h3>Black Hat Asia Arsenal 2024 - DefaceIntel-Visionary</h3>
+        <p>The purpose of this project is to develop a robust Web Defacement Detection tool that monitors websites for signs of defacement, an attack where the visual appearance of a website is altered by unauthorized users.
+        <br/><br/>
+        The tool aims to promptly provide alert if a website content is manipulated, which is often a result of cyber attacks such as those carried out by hacktivists.
+        <br/><br/>
+        The system utilizes two primary detection methods: a) analyzing drastic changes in webpage size and b) scanning for keywords and phrases associated with hacktivism, including those within images, using generative AI such as GPT that has been trained on large data including OSINT.
+        </p>
+        <a href="https://blackhat.com/asia-24/arsenal/schedule/#defaceintel-visionary-37633" target="_blank" rel="noopener noreferrer">Black Hat →</a>
+      </div>
+    </div>
+
+
+    <div class="event">
+      <div class="content">
+        <img src="images/git.jpg" alt="Cybersecurity: Girls in Tech" class="zoomable" />
+        <h3>Cybersecurity: Girls in Tech</h3>
+        <p>2023 - Two-day cybersecurity workshop for cross-polytechnic Girls in Tech (an IMDA & SGWIT programme)</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/InnovationDay2023.png" alt="PayPal Innovation Day 2023" class="zoomable" />
+        <h3>PayPal Innovation Day 2023</h3>
+        <p>Company-wide talk on Innovation</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/TechTalk2023.png" alt="PayPal Innovation Day 2023" class="zoomable" />
+        <h3>PayPal TechTalk 2023 - Innovation and Cybersecurity Invention</h3>
+        <p>Company-wide talk on Cybersecurity x Innovation</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/journal.jpg" alt="Beyond detection: Uncovering unknown threats" class="zoomable" />
+        <h3>Beyond detection: Uncovering unknown threats</h3>
+        <p><b>Cyber Security: A Peer-Reviewed JournalVolume 7 (2023-24)</b><br/>
+        In my paper "Beyond detection: Uncovering unknown threats" with Henry Stewart Publications, I talked about how Threat Hunting complements Threat Detection in making unknown threats known, cutting down on false negatives, leveraging different types of hunts for various objectives, and a path towards "hunt once and automate" to free up time and resources for more manual hunts.</p>
+        <a href="https://hstalks.com/article/8043/beyond-detection-uncovering-unknown-threats/" target="_blank" rel="noopener noreferrer">HSTalks</a> | 
+        <a href="https://www.researchgate.net/publication/382581379_Beyond_detection_Uncovering_unknown_threats" target="_blank" rel="noopener noreferrer">ResearchGate</a> | 
+        <a href="hhttps://henrystewartpublications.com/journal/cyber-security-a-peer-reviewed-journal/volume-7-2023-24/" target="_blank" rel="noopener noreferrer">Henry Stewart Publications →</a>
+      </div>
+    </div>
+
+
+    <div class="event">
+      <div class="content">
+        <img src="images/ppgit.png" alt="PayPal Singapore Cybersecurity Networking Event 2023: Presentation on PayPal Cybersecurity" class="zoomable" />
+        <h3>PayPal Singapore Cybersecurity Networking Event 2023: Presentation on PayPal Cybersecurity</h3>
+        <ul style="margin-top:10px; line-height:1.6; padding-left:20px;">
+          <li>Threat Landscape</li>
+          <li>Case Spotlight 1</li>
+          <li>Case Spotlight 2</li>
+          <li>Cybersec Consulting</li>
+          <li>Cybersec Teams</li>
+          <li>Cyber Career Paths @ PayPal</li>
+          <li>Panel</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/unodc.png" alt="United Nations Office on Drugs and Crime 2023" class="zoomable" />
+        <h3>United Nations Office on Drugs and Crime 2023: UNODC Regional Webinar on Online Scam, Phishing, and Identity Theft</h3>
+        <p><b>Digital Essentials Against Online Scams, Phishing, and Identity Theft</b>
+          <ul style="margin-top:10px; line-height:1.6; padding-left:20px;">
+            <li>3 threat types</li>
+            <li>2 mitigations each</li>
+            <li>1 attack vector each</li>
+          </p>
+        <a href="https://www.unodc.org/roseap/uploads/documents/KnowScam/index.html" target="_blank" rel="noopener noreferrer">UNODC →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/zaobao.png" alt="Cybersecurity for SMEs" class="zoomable" />
+        <h3>Local Newspaper - Cybersecurity for SMEs</h3>
+        <p>Discussed some pointers for small and medium enterprises to consider on cybersecurity hygiene.</p>
+        <a href="https://www.zaobao.com.sg/news/singapore/story20231104-1447545">Zao Bao →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/ja.jpg" alt="Junior Achievement: STEM Career with 3D VR Mini Expos" class="zoomable" />
+        <h3>Junior Achievement: STEM Career with 3D VR Mini Expos</h3>
+        <p>Regular volunteer for various cybersecurity, coding, and entrepreneurship workshops.</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/ad.jpg" alt="Armoured Droids" class="zoomable" />
+        <h3>Kids Cybersecurity Books - Armoured Droids</h3>
+        <p>Bootstrapped with fellow colleagues to publish and print over 2k hardback copies for students.</p>
+        <a href="https://www.amazon.com/Armoured-Droids-Fintech-Kids-George-ebook/dp/B0BMQQM9L9?">Amazon →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/cybasset.jpg" alt="CyBasset The Hound" class="zoomable" />
+        <h3>Kids Cybersecurity Books - CyBasset The Hound</h3>
+        <p>Bootstrapped with fellow colleagues to publish and print over 2k hardback copies for students, distributed via Junior Achievement.</p>
+        <a href="https://www.amazon.com/CyBasset-Hound-Fintech-Kids-George-ebook/dp/B0BHKTHNWT" target="_blank" rel="noopener noreferrer">Amazon →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/uoe.png" alt="Cyber Trends and Crimes" class="zoomable" />
+        <h3>University of Essex 2022 - Cyber Trends and Crimes</h3>
+        <p>Guest speaker for capstone project (CE301) in 2022 and 2023</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/bsides.jpg" alt="BSides SG 2022: Internal Domain Names" class="zoomable" />
+        <h3>BSides SG 2022: Internal Domain Names - What are you hiding and what are you leaking?</h3>
+        <p></p>
+          <a href="https://bsidessg.org/archive/bsidessg2022/" target="_blank" rel="noopener noreferrer">BSides</a> | 
+        <a href="https://m.youtube.com/watch?v=QlCdpHu5dyU" target="_blank" rel="noopener noreferrer">Youtube →</a>
+      </div>
+    </div>
+
+
+    <div class="event">
+      <div class="content">
+        <img src="images/bh-SCYTHE.jpg" alt="Black Hat Asia Arsenal 2022 - [SCYTHE] The Yara Signature Crafter that Fingerprints Honeypot Traffic" class="zoomable" />
+        <h3>Black Hat Asia Arsenal 2022 - [SCYTHE] The Yara Signature Crafter that Fingerprints Honeypot Traffic</h3>
+        <p>A fingerprinting engine that creates value from abusive traffic by generating attacker YARA signatures of various strictness levels to apply differing levels of mitigating friction. The tool further deploys honeypot entities to proactively perform threat actor attribution to identify and action against malicious actors rotating IP addresses.</p>
+        <a href="https://blackhat.com/asia-22/arsenal/schedule/#scythe-the-yara-signature-crafter-that-fingerprints-honeypot-traffic-26247" target="_blank" rel="noopener noreferrer">Black Hat →</a>
+      </div>
+    </div>
+
+
+    <div class="event">
+      <div class="content">
+        <img src="images/bh-ru.jpg" alt="Black Hat Asia Arsenal 2022 - Rate Unlimiter" class="zoomable" />
+        <h3>Black Hat Asia Arsenal 2022 - Rate Unlimiter</h3>
+        <p>Rate limiters are mechanisms placed on endpoints to control the rate of traffic that is received or sent; for instance, blocking any subsequent requests for 10 minutes from an IP address when its traffic rate exceeds the threshold limit of 10 hits per minute on a given endpoint. The example given is a static rate limit policy. My team hypotheses that in time to come, there will be a popularisation of dynamic rate limiters (new breed / advanced version of static rate limiters) wherein threshold values of requests or hits, time buckets, and blocking penalty periods are dynamically and automatically adjusted according to the nature of traffic and/or relevant detection algorithms. <br/><br/>
+        With such an outlook, our team has developed a pre-emptive offensive tool, the "Rate Unlimiter", which will, on-the-fly, reverse-derive the underlying rate policies for both static and dynamic rate limiters, allowing security researchers to maximise their gains against a target endpoint with their pool of IP addresses. For instance, when used against a /login endpoint, it will test and intelligently determine the underlying and even overlapping rate limit policies, for instance, "10hits/min->block for 15mins" for policy 1 and "25hits/3mins-> block for 45 mins" for policy 2. And should that rate limit policy be a dynamic one, the Rate Unlimiter will derive the latest values automatically to maximise the total number of successful requests to the given endpoint over a stipulated period of time and available resources.</p>
+        <a href="https://blackhat.com/asia-22/arsenal/schedule/#rate-unlimiter-25951" target="_blank" rel="noopener noreferrer">Black Hat →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/CSHub.png" alt="Detection and Response APAC Fireside Chat 2022" class="zoomable" />
+        <h3>Detection and Response APAC Fireside Chat 2022 - How Can You Detect the Unknown?</h3>
+        <ul style="margin-top:10px; line-height:1.6; padding-left:20px;">
+          <li>How does Threat Hunting tie in with Detection Engineering and Response?</li>
+          <li>How can threat hunting help mature the security posture of an organization?</li>
+          <li>What techniques can be utilized in threat hunting to complement detection engineering?</li>
+          <li>How can we reduce false positives?</li>
+          <li>What kinds of collaborative efforts between detection and response teams help drive efficiency or outputs?</li>
+          <li>How does automation help?</li>
+          <li>How do we find unknown threats?</li>
+        </ul>
+        <a href="https://www.cshub.com/events-cyber-security-digital-summit-detection-response-apac/speakers/george-chen" target="_blank" rel="noopener noreferrer">Cyber Security Hub →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/tsm.png" alt="SMU Technopreneurship Study Mission 2022" class="zoomable" />
+        <h3>Singapore Management University (SMU) Technopreneurship Study Mission 2022</h3>
+        <p>Supporting students in their trip to Silicon Valley</p>
+        <a href="https://wiki.smu.edu.sg/is427/2122T2_Silicon_Valley" target="_blank" rel="noopener noreferrer">SMU →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/kick.png" alt="PayPal Global Innovation Workshop - Kick Book" class="zoomable" />
+        <h3>PayPal Global Innovation Workshop - Kick Book</h3>
+        <p>Ran regular workshops on Innovation</p>
+        <a href="https://medium.com/paypal-tech/purposeful-innovation-for-good-ee3fad9cdb09" target="_blank" rel="noopener noreferrer">PayPal →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/docuseries.png" alt="PayPal Innovation DocuSeries" class="zoomable" />
+        <h3>PayPal Innovation DocuSeries Episode 4 - The Ideas</h3>
+        <p>"What kind of patents will be filed in the coming years to maintain that intellectual property advantage? And who will be the inventors? In this episode, we meet someone who has submitted over 130 ideas."</p>
+        <a href="https://www.youtube.com/watch?v=yzrypEeKwtA" target="_blank" rel="noopener noreferrer">PayPal Innovation DocuSeries →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/jac.png" alt="Junior Achievement - Cybersecurity Workshop" class="zoomable" />
+        <h3>Junior Achievement - Cybersecurity Workshop</h3>
+        <p>Ran regular cyber workshops with Junior Achievement for different schools.</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/fintech3.jpg" alt="Singapore Fintech Festival 2021 - Innovation Lab Crawl" class="zoomable" />
+        <h3>Singapore Fintech Festival 2021 - Innovation Lab Crawl</h3>
+        <p>Personal Innovation Story (Cybersecurity)</p>
+        <a href="https://www.youtube.com/watch?v=I48GHFsc9Qs&feature=youtu.be" target="_blank" rel="noopener noreferrer">Innovation Lab Crawl →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/imda.png" alt="Webcasts and Clinic on Secure ePayments for Senior Citizens" class="zoomable" />
+        <h3>Webcasts and Clinic on Secure ePayments for Senior Citizens</h3>
+        <p>Partnered with the Infocomm Media Development Authority (IMDA) of Singapore to deliver two webcasts to senior citizens on the secure usage of online payments, benefits of contactless payments, as well as a walkthrough on how they can set up an accounts with such providers.</p>
+        <a href="https://medium.com/paypal-tech/put-on-your-white-hat-and-hack-for-good-85d401ac5d7d">PayPal →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/geekle.jpg" alt="Cyber Security Global Summit 2021" class="zoomable" />
+        <h3>Cyber Security Global Summit 2021 - The Curious Case of False Negatives: Are No Detections a Good Thing?</h3>
+        <p>Delivered an external talk on Threat Detections and an internal PayPal TechTalk on "MITRE: Mapping Defense to ATT&CK"</p>
+        <a href="https://geekle.us/cyber" target="_blank" rel="noopener noreferrer">geekle →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/advisory.png" alt="Experience+: PayPal" class="zoomable" />
+        <h3>Experience+: PayPal</h3>
+        <p>Industry Panel, 2021</p>
+        <a href="https://advisory.sg/2021/10/03/insights-on-paypal/" target="_blank" rel="noopener noreferrer">Advisory SG →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/bh-safe.jpg" alt="Black Hat Asia Arsenal 2020 - Sample Analysing Forensics Examiner (SAFE)" class="zoomable" />
+        <h3>Black Hat Asia Arsenal 2020 - Sample Analysing Forensics Examiner (SAFE)</h3>
+        <p>Security incidents are usually created by alerts or events, which are based on a small set of forwarded logs. When a server is suspected to be compromised, we go back to the host machine to perform forensics on the rest of the logs to investigate the network traffic and endpoint.
+        <br/><br/>
+        Sample Analysing Forensics Examiner (SAFE) enables security administrators/engineers to run automated forensics investigations effortlessly on a selected set of machines, either specified or via sampling, to get individual baseline threat scores on the likelihood of a server compromise. A number of logs, including web server, syslog, system, network logs are surveyed for this analysis. With SAFE, security engineers can easily survey a selected pool of servers to hunt for any potential infection or compromise.</p>
+        <a href="https://blackhat.com/asia-20/arsenal/schedule/#sample-analysing-forensics-examiner-safe-19307" target="_blank" rel="noopener noreferrer">Black Hat →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/corelight.png" alt="SANS Webcast 2020 - Raspberry Pi sensors for home networks" class="zoomable" />
+        <h3>SANS Webcast Guest 2020 - Raspberry Pi sensors for home networks</h3>
+        <p>Invited by Corelight to guest speak in a SANS Webcast. Titled "What The Heck is That?", my sharing goes through how I've set up visibility in my home network to find evil.</p>
+        <a href="https://www.youtube.com/watch?v=Qkc1IasDlKo" target="_blank" rel="noopener noreferrer">Corelight</a> | 
+        <a href="https://medium.com/paypal-engineering/my-home-setup-helped-me-understand-cybersecurity-flow-27a692b90a19" target="_blank" rel="noopener noreferrer">PayPal</a> | 
+        <a href="https://www.sans.org/webcasts/raspberry-pi-sensors-home-networks-116595" target="_blank" rel="noopener noreferrer">SANS →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/vulcan.png" alt="Singapore Hacker"  class="zoomable" />
+        <h3>What The Hack: This S’porean Was One Of 400 Who ‘Hacked’ Govt Websites For Bounty</h3>
+        <p>Shared about bug bounty</p>
+        <a href="https://vulcanpost.com/662166/government-bug-bounty-programme-gbbp-singapore/" target="_blank" rel="noopener noreferrer">vulcanpost →</a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/sutd.png" alt="SUTD Library Industry Expert Sharing Series 2019"  class="zoomable" />
+        <h3>SUTD Library Industry Expert Sharing Series 2019 - A day in the life of a Security Engineer at PayPal</h3>
+        <p>A cyber talk for students of Singapore University of Technology and Design (SUTD)</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/sgx.png" alt="SGX - TA Programme"  class="zoomable" />
+        <h3>SGX Technology Associate Programme</h3>
+        <p>Supported in various career fairs</p>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/techinasia2.jpg" alt="DEMO Asia 2012"  class="zoomable"/>
+        <h3>DEMO Asia 2012</h3>
+        <p>Asia’s launchpad for emerging tech and trends</p>
+        <a href="https://www.techinasia.com/live-blog-pitches-from-social-media-startups" target="_blank" rel="noopener noreferrer">Tech in Asia</a> | 
+        
+        <a href="https://news.smu.edu.sg/sites/news.smu.edu.sg/files/wwwsmu/news_room/smu_in_the_news/2012/sources/BT_20120312_1.pdf" target="_blank" rel="noopener noreferrer">The Business Times</a> | 
+        <a href="https://www.forbes.com/sites/limyunghui/2012/02/28/demo-asia-2012-featuring-76-tech-startups-from-14-countries/" target="_blank" rel="noopener noreferrer">Forbes</a> |
+        <a href="https://venturebeat.com/ai/76-startups-vie-for-attention-at-demo-asia" target="_blank" rel="noopener noreferrer">Venturebeat</a> |
+        <a href="https://youtube.com/watch?v=t2kCW8feMC8" target="_blank" rel="noopener noreferrer">Youtube</a> |
+        <a href="https://www.bangkokpost.com/business/general/283233/art-of-the-pitch-six-minutes-to-change-your-life" target="_blank" rel="noopener noreferrer">Bangkok Post</a> |
+        <a href="https://news.smu.edu.sg/news/2012/03/12/sageby-finds-way-monetise-waiting-time" target="_blank" rel="noopener noreferrer">SMU → </a>
+      </div>
+    </div>
+
+    <div class="event">
+      <div class="content">
+        <img src="images/techinasia.jpg" alt="Myojo-Waraku 2011, Japan"  class="zoomable"/>
+        <h3>Myojo-Waraku 2011, Japan</h3>
+        <p>Startup Demo</p>
+        <a href="https://techcrunch.com/2011/11/19/from-the-myojo-waraku-2011-festival-in-fukuoka-japan-demos-from-8-asian-startups/" target="_blank" rel="noopener noreferrer">TechCrunch </a> | 
+        <a href="https://www.techinasia.com/myojo-waraku#sageby" target="_blank" rel="noopener noreferrer">Tech in Asia →</a>
+      </div>
+    </div>
   </div>
+
+  <!-- Modal popup -->
+  <div id="imgModal" class="img-modal">
+    <img class="modal-content" id="modalImage" alt="">
+    <div id="caption"></div>
+  </div>
+
+<script>
+  // Auto-assign left/right classes alternatively
+  const events = document.querySelectorAll('.event');
+  events.forEach((event, index) => {
+    if (index % 2 === 0) {
+      event.classList.add('left');
+    } else {
+      event.classList.add('right');
+    }
+  });
+
+  // Image modal functionality
+  const modal = document.getElementById('imgModal');
+  const modalImg = document.getElementById('modalImage');
+  const captionText = document.getElementById('caption');
+  const zoomableImgs = document.querySelectorAll('.zoomable');
+
+  zoomableImgs.forEach(img => {
+    img.addEventListener('click', function() {
+      modal.style.display = 'block';
+      modalImg.src = this.src;
+      captionText.innerHTML = this.alt;
+    });
+  });
+
+  modal.addEventListener('click', function(e) {
+    if (e.target !== modalImg) {
+      modal.style.display = 'none';
+      modalImg.src = '';
+    }
+  });
+</script>
+
+<script>
+  (function() {
+    const correctUser = "geochen";  
+    const urlParams = new URLSearchParams(window.location.search);
+    const passwordParam = urlParams.get('user');
+    const authorized = sessionStorage.getItem('authorized');
+
+    if (authorized === 'true') return; // Already authorized
+
+    // Check password from URL param first
+    if (passwordParam === correctUser) {
+      sessionStorage.setItem('authorized', 'true');
+      return;
+    }
+
+    const userInput = prompt("Name:");
+    if (userInput !== correctUser) {
+      // Show fake page with live clock
+      document.body.innerHTML = `
+        <div style="color:#666; font-family: monospace, monospace; font-size: 24px; text-align:center; padding: 100px;">
+          <h1>Hello World!</h1>
+          <p>Current time: <span id="fakeClock"></span></p>
+        </div>`;
+
+      function updateClock() {
+        const now = new Date();
+        document.getElementById("fakeClock").textContent = now.toLocaleTimeString();
+      }
+      updateClock();
+      setInterval(updateClock, 1000);
+
+      throw new Error("Hello World!");
+    } else {
+      sessionStorage.setItem('authorized', 'true');
+    }
+  })();
+</script>
+
+
 </body>
 </html>
