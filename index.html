@@ -170,6 +170,25 @@
     font-weight: bold;
   }
 
+
+  .filter-btn {
+    background: none;
+    color: #66fcf1;
+    border: 1px solid #45a29e;
+    margin: 5px;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background 0.3s ease;
+  }
+
+  .filter-btn:hover,
+  .filter-btn.active {
+    background: #45a29e;
+    color: #0b0c10;
+  }
+
 </style>
 <meta name="robots" content="noindex, nofollow" />
 </head>
@@ -177,15 +196,19 @@
 
   <header style="text-align:center; padding: 30px 20px; color:#66fcf1; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;">
   <h1>Speaking Engagements & Workshops</h1>
-  <p style="color:#a0b0b5; font-size: 1.1em; max-width: 700px; margin: 0 auto;">
-    A record of presentations, workshops, and media contributions in cybersecurity, innovation, and IT.
-  </p>
+  <div id="filterBar" style="text-align:center; margin: 30px auto;">
+  <button class="filter-btn active" data-filter="all">All</button>
+  <button class="filter-btn" data-filter="talk">Talks</button>
+  <button class="filter-btn" data-filter="workshop">Workshops</button>
+  <button class="filter-btn" data-filter="publication">Publications</button>
+  <button class="filter-btn" data-filter="community">Community</button>
+</div>
 </header>
 
   <div class="timeline">
 
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/sas.png" alt="Kaspersky Security Analyst Summit 2025" class="zoomable" />
         <h3>Kaspersky SAS25 - Drive-by Compromise: Botnet at 133.7km/h</h3>
@@ -195,7 +218,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/UNDP.png" alt="UNDP / UNICC / FIRST Technical Colloquium 2025" class="zoomable" />
         <h3>UNDP / UNICC / FIRST Technical Colloquium 2025: Strategic Threat Response to Cyber Attacks and Abuses</h3>
@@ -204,7 +227,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/sector.png" alt="SECTOR 2025 - DriveThru Hacking: Now with Delivery" class="zoomable" />
         <h3>SECTOR 2025 - DriveThru Hacking: Now with Delivery</h3>
@@ -219,7 +242,7 @@
     </div>
 
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/bh-drive.jpg" alt="Black Hat Asia 2025 Briefing - DriveThru Car Hacking: Fast Food, Faster Data Breach" class="zoomable" />
         <h3>Black Hat Asia 2025 Briefing - DriveThru Car Hacking: Fast Food, Faster Data Breach</h3>
@@ -235,7 +258,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/bh-bh.jpg" alt="Black Hat Asia 2025 Business Hall: DriveThru Hacking" class="zoomable" />
         <h3>Black Hat Asia 2025 Business Hall: DriveThru Hacking</h3>
@@ -244,7 +267,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event community">
       <div class="content">
         <img src="images/chair.png" alt="Chair, Detection Engineering & Threat Hunting SIG, FIRST" class="zoomable" />
         <h3>Chair, Detection Engineering & Threat Hunting SIG, FIRST</h3>
@@ -253,7 +276,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event workshop">
       <div class="content">
         <img src="images/govware.png" alt="GovWare's Private In-Depth Roundtable" class="zoomable" />
         <h3>GovWare's Private In-Depth Roundtable</h3>
@@ -265,7 +288,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/corinium.png" alt="Corinium’s AppSec & DevSecOps Singapore 2025" class="zoomable" />
         <h3>Corinium’s AppSec & DevSecOps Singapore 2025 - Threat Response Strategies: Tackling Cyber Attacks vs. Abuses</h3>
@@ -279,7 +302,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/cybercrime.png" alt="Cybercrime Magazine Podcast 2025" class="zoomable" />
         <h3>Cybercrime Magazine Podcast 2025 - Dashcam Security Risks</h3>
@@ -291,7 +314,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/bh-dahn.png" alt="Black Hat Asia Arsenal 2024 - Deceptively Adaptive Honey Net (dahn)" class="zoomable" />
         <h3>Black Hat Asia Arsenal 2024 - Deceptively Adaptive Honey Net (dahn)</h3>
@@ -303,7 +326,7 @@
 
 
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/bh-div.png" alt="Black Hat Asia Arsenal 2024 - DefaceIntel-Visionary" class="zoomable" />
         <h3>Black Hat Asia Arsenal 2024 - DefaceIntel-Visionary</h3>
@@ -318,7 +341,7 @@
     </div>
 
 
-    <div class="event">
+    <div class="event workshop">
       <div class="content">
         <img src="images/git.jpg" alt="Cybersecurity: Girls in Tech" class="zoomable" />
         <h3>Cybersecurity: Girls in Tech</h3>
@@ -326,7 +349,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/InnovationDay2023.png" alt="PayPal Innovation Day 2023" class="zoomable" />
         <h3>PayPal Innovation Day 2023</h3>
@@ -334,7 +357,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/TechTalk2023.png" alt="PayPal Innovation Day 2023" class="zoomable" />
         <h3>PayPal TechTalk 2023 - Innovation and Cybersecurity Invention</h3>
@@ -342,7 +365,15 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event community">
+      <div class="content">
+        <img src="images/vi.png" alt="Lecturing at Vertical Institute"  class="zoomable" />
+        <h3>Lecturing at Vertical Institute</h3>
+        <p>Cybersecurity Bootcamps</p>
+      </div>
+    </div>
+
+    <div class="event publication">
       <div class="content">
         <img src="images/journal.jpg" alt="Beyond detection: Uncovering unknown threats" class="zoomable" />
         <h3>Beyond detection: Uncovering unknown threats</h3>
@@ -355,23 +386,15 @@
     </div>
 
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/ppgit.png" alt="PayPal Singapore Cybersecurity Networking Event 2023: Presentation on PayPal Cybersecurity" class="zoomable" />
         <h3>PayPal Singapore Cybersecurity Networking Event 2023: Presentation on PayPal Cybersecurity</h3>
-        <ul style="margin-top:10px; line-height:1.6; padding-left:20px;">
-          <li>Threat Landscape</li>
-          <li>Case Spotlight 1</li>
-          <li>Case Spotlight 2</li>
-          <li>Cybersec Consulting</li>
-          <li>Cybersec Teams</li>
-          <li>Cyber Career Paths @ PayPal</li>
-          <li>Panel</li>
-        </ul>
+        <p>Presented some incident highlights and internal case studies</p>
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/unodc.png" alt="United Nations Office on Drugs and Crime 2023" class="zoomable" />
         <h3>United Nations Office on Drugs and Crime 2023: UNODC Regional Webinar on Online Scam, Phishing, and Identity Theft</h3>
@@ -385,7 +408,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event community">
       <div class="content">
         <img src="images/zaobao.png" alt="Cybersecurity for SMEs" class="zoomable" />
         <h3>Local Newspaper - Cybersecurity for SMEs</h3>
@@ -394,7 +417,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event workshop">
       <div class="content">
         <img src="images/ja.jpg" alt="Junior Achievement: STEM Career with 3D VR Mini Expos" class="zoomable" />
         <h3>Junior Achievement: STEM Career with 3D VR Mini Expos</h3>
@@ -402,7 +425,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event community">
       <div class="content">
         <img src="images/ad.jpg" alt="Armoured Droids" class="zoomable" />
         <h3>Kids Cybersecurity Books - Armoured Droids</h3>
@@ -411,7 +434,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event community">
       <div class="content">
         <img src="images/cybasset.jpg" alt="CyBasset The Hound" class="zoomable" />
         <h3>Kids Cybersecurity Books - CyBasset The Hound</h3>
@@ -420,7 +443,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/uoe.png" alt="Cyber Trends and Crimes" class="zoomable" />
         <h3>University of Essex 2022 - Cyber Trends and Crimes</h3>
@@ -428,7 +451,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/bsides.jpg" alt="BSides SG 2022: Internal Domain Names" class="zoomable" />
         <h3>BSides SG 2022: Internal Domain Names - What are you hiding and what are you leaking?</h3>
@@ -439,7 +462,7 @@
     </div>
 
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/bh-SCYTHE.jpg" alt="Black Hat Asia Arsenal 2022 - [SCYTHE] The Yara Signature Crafter that Fingerprints Honeypot Traffic" class="zoomable" />
         <h3>Black Hat Asia Arsenal 2022 - [SCYTHE] The Yara Signature Crafter that Fingerprints Honeypot Traffic</h3>
@@ -449,7 +472,7 @@
     </div>
 
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/bh-ru.jpg" alt="Black Hat Asia Arsenal 2022 - Rate Unlimiter" class="zoomable" />
         <h3>Black Hat Asia Arsenal 2022 - Rate Unlimiter</h3>
@@ -459,7 +482,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/CSHub.png" alt="Detection and Response APAC Fireside Chat 2022" class="zoomable" />
         <h3>Detection and Response APAC Fireside Chat 2022 - How Can You Detect the Unknown?</h3>
@@ -476,7 +499,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/tsm.png" alt="SMU Technopreneurship Study Mission 2022" class="zoomable" />
         <h3>Singapore Management University (SMU) Technopreneurship Study Mission 2022</h3>
@@ -485,7 +508,19 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event community">
+      <div class="content">
+        <img src="images/ucd.png" alt="Lecturing at University College Dublin"  class="zoomable" />
+        <h3>Lecturing at University College Dublin</h3>
+        <p>
+            <ul style="margin-top:10px; line-height:1.6; padding-left:20px;">
+            <li>Cybersecurity MIS3009S</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+
+    <div class="event workshop">
       <div class="content">
         <img src="images/kick.png" alt="PayPal Global Innovation Workshop - Kick Book" class="zoomable" />
         <h3>PayPal Global Innovation Workshop - Kick Book</h3>
@@ -494,7 +529,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/docuseries.png" alt="PayPal Innovation DocuSeries" class="zoomable" />
         <h3>PayPal Innovation DocuSeries Episode 4 - The Ideas</h3>
@@ -503,15 +538,15 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event workshop">
       <div class="content">
         <img src="images/jac.png" alt="Junior Achievement - Cybersecurity Workshop" class="zoomable" />
         <h3>Junior Achievement - Cybersecurity Workshop</h3>
-        <p>Ran regular cyber workshops with Junior Achievement for different schools.</p>
+        <p>Wrote a cyber workshop and ran it with Junior Achievement for different schools.</p>
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/fintech3.jpg" alt="Singapore Fintech Festival 2021 - Innovation Lab Crawl" class="zoomable" />
         <h3>Singapore Fintech Festival 2021 - Innovation Lab Crawl</h3>
@@ -520,7 +555,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/imda.png" alt="Webcasts and Clinic on Secure ePayments for Senior Citizens" class="zoomable" />
         <h3>Webcasts and Clinic on Secure ePayments for Senior Citizens</h3>
@@ -529,7 +564,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/geekle.jpg" alt="Cyber Security Global Summit 2021" class="zoomable" />
         <h3>Cyber Security Global Summit 2021 - The Curious Case of False Negatives: Are No Detections a Good Thing?</h3>
@@ -538,7 +573,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/advisory.png" alt="Experience+: PayPal" class="zoomable" />
         <h3>Experience+: PayPal</h3>
@@ -547,7 +582,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/bh-safe.jpg" alt="Black Hat Asia Arsenal 2020 - Sample Analysing Forensics Examiner (SAFE)" class="zoomable" />
         <h3>Black Hat Asia Arsenal 2020 - Sample Analysing Forensics Examiner (SAFE)</h3>
@@ -558,7 +593,20 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event community">
+      <div class="content">
+        <img src="images/mu.png" alt="Lecturing at Murdoch University"  class="zoomable" />
+        <h3>Lecturing at Murdoch University</h3>
+        <p>
+            <ul style="margin-top:10px; line-height:1.6; padding-left:20px;">
+            <li>Computer Security ICT287</li>
+            <li>Security Architectures and Systems Administration ICT379</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+
+    <div class="event talk">
       <div class="content">
         <img src="images/corelight.png" alt="SANS Webcast 2020 - Raspberry Pi sensors for home networks" class="zoomable" />
         <h3>SANS Webcast Guest 2020 - Raspberry Pi sensors for home networks</h3>
@@ -569,7 +617,21 @@
       </div>
     </div>
 
-    <div class="event">
+     <div class="event community">
+      <div class="content">
+        <img src="images/rp.jpg" alt="Lecturing at Republic Polytechnic"  class="zoomable" />
+        <h3>Lecturing at Republic Polytechnic</h3>
+        <p>
+            <ul style="margin-top:10px; line-height:1.6; padding-left:20px;">
+            <li>Ethical Hacking C374</li>
+            <li>Computer System Technologies C227</li>
+            <li>Operating Systems Security C228</li>
+          </ul>
+        </p>
+      </div>
+    </div>
+   
+    <div class="event community">
       <div class="content">
         <img src="images/vulcan.png" alt="Singapore Hacker"  class="zoomable" />
         <h3>What The Hack: This S’porean Was One Of 400 Who ‘Hacked’ Govt Websites For Bounty</h3>
@@ -578,7 +640,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/sutd.png" alt="SUTD Library Industry Expert Sharing Series 2019"  class="zoomable" />
         <h3>SUTD Library Industry Expert Sharing Series 2019 - A day in the life of a Security Engineer at PayPal</h3>
@@ -586,7 +648,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event community">
       <div class="content">
         <img src="images/sgx.png" alt="SGX - TA Programme"  class="zoomable" />
         <h3>SGX Technology Associate Programme</h3>
@@ -594,7 +656,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/techinasia2.jpg" alt="DEMO Asia 2012"  class="zoomable"/>
         <h3>DEMO Asia 2012</h3>
@@ -610,7 +672,7 @@
       </div>
     </div>
 
-    <div class="event">
+    <div class="event talk">
       <div class="content">
         <img src="images/techinasia.jpg" alt="Myojo-Waraku 2011, Japan"  class="zoomable"/>
         <h3>Myojo-Waraku 2011, Japan</h3>
@@ -621,14 +683,14 @@
     </div>
   </div>
 
-  <!-- Modal popup -->
+
   <div id="imgModal" class="img-modal">
     <img class="modal-content" id="modalImage" alt="">
     <div id="caption"></div>
   </div>
 
 <script>
-  // Auto-assign left/right classes alternatively
+
   const events = document.querySelectorAll('.event');
   events.forEach((event, index) => {
     if (index % 2 === 0) {
@@ -638,7 +700,6 @@
     }
   });
 
-  // Image modal functionality
   const modal = document.getElementById('imgModal');
   const modalImg = document.getElementById('modalImage');
   const captionText = document.getElementById('caption');
@@ -667,9 +728,9 @@
     const passwordParam = urlParams.get('user');
     const authorized = sessionStorage.getItem('authorized');
 
-    if (authorized === 'true') return; // Already authorized
+    if (authorized === 'true') return; 
 
-    // Check password from URL param first
+
     if (passwordParam === correctUser) {
       sessionStorage.setItem('authorized', 'true');
       return;
@@ -677,16 +738,16 @@
 
     const userInput = prompt("Name:");
     if (userInput !== correctUser) {
-      // Show fake page with live clock
+
       document.body.innerHTML = `
         <div style="color:#666; font-family: monospace, monospace; font-size: 24px; text-align:center; padding: 100px;">
           <h1>Hello World!</h1>
-          <p>Current time: <span id="fakeClock"></span></p>
+          <p>Current time: <span id="Clock"></span></p>
         </div>`;
 
       function updateClock() {
         const now = new Date();
-        document.getElementById("fakeClock").textContent = now.toLocaleTimeString();
+        document.getElementById("Clock").textContent = now.toLocaleTimeString();
       }
       updateClock();
       setInterval(updateClock, 1000);
@@ -699,20 +760,52 @@
 </script>
 
 <script>
-  // Initialize the agent on page load.
   const fpPromise = import('https://fpjscdn.net/v3/2coxwT40KCO61eRYJVbS')
     .then(FingerprintJS => FingerprintJS.load({
       region: "ap"
     }))
 
-  // Get the visitorId when you need it.
+
   fpPromise
     .then(fp => fp.get())
     .then(result => {
       const visitorId = result.visitorId
       console.log(visitorId)
     })
+
+const filterButtons = document.querySelectorAll('#filterBar .filter-btn');
+const filterEvents = document.querySelectorAll('.timeline .event'); 
+
+filterButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    filterButtons.forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+
+    const filter = button.getAttribute('data-filter');
+
+    events.forEach(event => {
+      if (filter === 'all' || event.classList.contains(filter)) {
+        event.style.display = 'block';
+      } else {
+        event.style.display = 'none';
+      }
+    });
+
+    const visibleEvents = Array.from(events).filter(e => e.style.display !== 'none');
+    visibleEvents.forEach((event, index) => {
+      event.classList.remove('left', 'right');
+      if (index % 2 === 0) {
+        event.classList.add('left');
+      } else {
+        event.classList.add('right');
+      }
+    });
+  });
+});
+
+
 </script>
+
 
 
 </body>
